@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative h-[600px] overflow-hidden bg-gradient-to-r from-blue-950 to-blue-900">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
-            src="/placeholder.svg?height=600&width=1920"
+            src="/images/homeBg.jpg"
             alt="Shipping logistics"
             fill
             className="object-cover"
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-xl">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/homeBg2.jpg"
                 alt="About Smart Mover Shipping Logistics"
                 fill
                 className="object-cover"

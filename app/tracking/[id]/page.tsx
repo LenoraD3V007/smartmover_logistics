@@ -23,49 +23,49 @@ const getMockTrackingData = (id: string) => {
     trackingNumber: id,
     status: "In Transit",
     estimatedDelivery: "April 10, 2025",
-    origin: "New York, USA",
-    destination: "Dallas, USA",
+    origin: "Nashville-Tennessee, USA",
+    destination: "Fairmont-West Virginia, USA",
     service: "Express Sea Freight",
-    weight: "245 kg",
+    weight: "2,185 kg",
     pieces: "1",
-    shipDate: "April 1, 2025",
+    shipDate: "April 5, 2025",
     receiver: {
       name: "Elsie Louise Patrick",
-      company: "Receiver company",
-      address: "give me the receiver address",
-      phone: "+1 531-20-55-9219",
-      email: "elsie.louise@gmail.com",
+      company: "...",
+      address: "8081/2 Center Ave. mononagh, WV, 26554",
+      phone: "+1 681-332-6965",
+      email: "...",
     },
     journey: [
       {
-        date: "April 1, 2025",
+        date: "April 5, 2025",
         time: "09:30 AM",
-        location: "New York, USA",
-        status: "Shipment picked up",
+        location: "Nashville-Tennesse, USA",
+        status: "Transhipment document processed",
         completed: true,
       },
       {
-        date: "April 2, 2025",
+        date: "April 5, 2025",
         time: "11:45 AM",
-        location: "New York, USA",
+        location: "Nashville-Tennessee, USA",
         status: "Processed at origin warehouse",
         completed: true,
       },
       {
-        date: "April 3, 2025",
-        time: "08:15 PM",
-        location: "New York, USA",
-        status: "Departed origin facility",
-        completed: true,
+        date: "April 5, 2025",
+        time: "1:15 PM",
+        location: "Nashville-Tennesse, USA",
+        status: "Departed for enforcement investigation",
+        completed: in-progress,
       },
       {
-        date: "April 4, 2025",
-        time: "10:30 AM",
+        date: "April 5, 2025",
+        time: "3:30 PM",
         location: "In Transit",
         status: "In transit to destination",
         completed: true,
       },
-      {
+      /*{
         date: "April 7, 2025",
         time: "09:00 AM",
         location: "London, UK",
@@ -85,7 +85,7 @@ const getMockTrackingData = (id: string) => {
         location: "London, UK",
         status: "Delivered",
         completed: false,
-      },
+      },*/
     ],
   }
 }
@@ -197,7 +197,8 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
               <div className="mb-8">
                 <h3 className="mb-4 font-semibold">Shipment Image</h3>
                 <div className="relative h-[200px] overflow-hidden rounded-lg sm:h-[300px]">
-                  <Image src="/placeholder.svg?height=300&width=800" alt="Shipment" fill className="object-cover" />
+                  {/*<Image src="/placeholder.svg?height=300&width=800" alt="Shipment" fill className="object-cover" />*/}
+                  <Image src="/images/toyota_tacoma.jpg" alt="Toyota Tacoma 2025" fill className="object-cover" />
                 </div>
               </div>
 
