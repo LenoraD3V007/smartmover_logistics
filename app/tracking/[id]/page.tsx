@@ -56,7 +56,7 @@ const getMockTrackingData = (id: string) => {
         time: "1:15 PM",
         location: "Nashville-Tennesse, USA",
         status: "Departed for enforcement investigation",
-        completed: in-progress,
+        completed: true,
       },
       {
         date: "April 5, 2025",
