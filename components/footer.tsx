@@ -77,15 +77,18 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-yellow-500" />
-                <span className="text-gray-300">123 Logistics Way, Shipping District, New York, NY 10001, USA</span>
+                <span className="text-gray-300">
+161 Airpark Center East Drive, Building A,
+Nashville, TN 37217 
+</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0 text-yellow-500" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+1 (815) 916-9026</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 flex-shrink-0 text-yellow-500" />
-                <span className="text-gray-300">info@smartmover.com</span>
+                <span className="text-gray-300">info@smartcargomover.com</span>
               </li>
             </ul>
           </div>
