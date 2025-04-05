@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative h-[600px] overflow-hidden bg-gradient-to-r from-blue-950 to-blue-900">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
-            src="/images/homeBg.jpg"
+            src="/images/homeBg1.jpg"
             alt="Shipping logistics"
             fill
             className="object-cover"

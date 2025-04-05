@@ -22,7 +22,7 @@ const getMockTrackingData = (id: string) => {
   return {
     trackingNumber: id,
     status: "In Transit",
-    estimatedDelivery: "April 10, 2025",
+    estimatedDelivery: "May 10, 2025",
     origin: "Nashville-Tennessee, USA",
     destination: "Fairmont-West Virginia, USA",
     service: "Express Sea Freight",
@@ -198,7 +198,7 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                 <h3 className="mb-4 font-semibold">Shipment Image</h3>
                 <div className="relative h-[200px] overflow-hidden rounded-lg sm:h-[300px]">
                   {/*<Image src="/placeholder.svg?height=300&width=800" alt="Shipment" fill className="object-cover" />*/}
-                  <Image src="/images/toyota_tacoma.jpg" alt="Toyota Tacoma 2025" fill className="object-cover" />
+                  <Image src="/images/toyota_tacoma_2025.jpg" alt="Toyota Tacoma 2025" fill className="object-cover" />
                 </div>
               </div>
 
