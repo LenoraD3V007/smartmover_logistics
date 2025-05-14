@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Clock, MapPin, Calendar, User, Building, Phone, Mail } from "lucide-react"
+import {getPackageByTrackingCode} from "@/lib/data/user-tracking"
 
 interface TrackingPageProps {
   params: {
@@ -91,7 +92,8 @@ const getMockTrackingData = (id: string) => {
 }
 
 export default function TrackingDetailPage({ params }: TrackingPageProps) {
-  const trackingData = getMockTrackingData(params.id)
+  //const trackingData = getMockTrackingData(params.id)
+  const trackingData = getPackageByTrackingCode(params.id)
 
   return (
     <main className="flex-1">
@@ -101,7 +103,7 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
             <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
               <div>
                 <h1 className="text-2xl font-bold sm:text-3xl">Tracking Details</h1>
-                <p className="text-gray-200">Tracking Number: {trackingData.trackingNumber}</p>
+                <p className="text-gray-200">Tracking Number: {trackingData?.trackingNumber}</p>
               </div>
               <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
                 <Link href="/tracking">Track Another Shipment</Link>
@@ -113,11 +115,11 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                   <Clock className="h-5 w-5 text-yellow-500" />
                   <span className="font-medium">Status:</span>
                   <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
-                    {trackingData.status}
+                    {trackingData?.status}
                   </span>
                 </div>
                 <div>
-                  <span className="font-medium">Estimated Delivery:</span> <span>{trackingData.estimatedDelivery}</span>
+                  <span className="font-medium">Estimated Delivery:</span> <span>{trackingData?.estimatedDelivery}</span>
                 </div>
               </div>
 
@@ -127,27 +129,27 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="text-gray-500">Origin</p>
-                      <p className="font-medium">{trackingData.origin}</p>
+                      <p className="font-medium">{trackingData?.origin}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Destination</p>
-                      <p className="font-medium">{trackingData.destination}</p>
+                      <p className="font-medium">{trackingData?.destination}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Service</p>
-                      <p className="font-medium">{trackingData.service}</p>
+                      <p className="font-medium">{trackingData?.service}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Ship Date</p>
-                      <p className="font-medium">{trackingData.shipDate}</p>
+                      <p className="font-medium">{trackingData?.shipDate}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Weight</p>
-                      <p className="font-medium">{trackingData.weight}</p>
+                      <p className="font-medium">{trackingData?.weight}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Pieces</p>
-                      <p className="font-medium">{trackingData.pieces}</p>
+                      <p className="font-medium">{trackingData?.pieces}</p>
                     </div>
                   </div>
                 </div>
@@ -159,35 +161,35 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                       <User className="mt-0.5 h-4 w-4 text-gray-400" />
                       <div>
                         <p className="text-gray-500">Name</p>
-                        <p className="font-medium">{trackingData.receiver.name}</p>
+                        <p className="font-medium">{trackingData?.receiver.name}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <Building className="mt-0.5 h-4 w-4 text-gray-400" />
                       <div>
                         <p className="text-gray-500">Company</p>
-                        <p className="font-medium">{trackingData.receiver.company}</p>
+                        <p className="font-medium">{trackingData?.receiver.company}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <MapPin className="mt-0.5 h-4 w-4 text-gray-400" />
                       <div>
                         <p className="text-gray-500">Address</p>
-                        <p className="font-medium">{trackingData.receiver.address}</p>
+                        <p className="font-medium">{trackingData?.receiver.address}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <Phone className="mt-0.5 h-4 w-4 text-gray-400" />
                       <div>
                         <p className="text-gray-500">Phone</p>
-                        <p className="font-medium">{trackingData.receiver.phone}</p>
+                        <p className="font-medium">{trackingData?.receiver.phone}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <Mail className="mt-0.5 h-4 w-4 text-gray-400" />
                       <div>
                         <p className="text-gray-500">Email</p>
-                        <p className="font-medium">{trackingData.receiver.email}</p>
+                        <p className="font-medium">{trackingData?.receiver.email}</p>
                       </div>
                     </div>
                   </div>
@@ -198,14 +200,17 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                 <h3 className="mb-4 font-semibold">Shipment Image</h3>
                 <div className="relative h-[200px] overflow-hidden rounded-lg sm:h-[300px]">
                   {/*<Image src="/placeholder.svg?height=300&width=800" alt="Shipment" fill className="object-cover" />*/}
-                  <Image src="/images/toyota_tacoma_2025.jpg" alt="Toyota Tacoma 2025" fill className="object-cover" />
+                {/*   <Image src="/images/toyota_tacoma_2025.jpg" alt="Toyota Tacoma 2025" fill className="object-cover" /> */}
+                
+                  {/* <Image src={null} alt="" fill className="object-cover" /> */}
+
                 </div>
               </div>
 
               <div>
                 <h3 className="mb-4 font-semibold">Shipment Journey</h3>
                 <div className="space-y-6">
-                  {trackingData.journey.map((step, index) => (
+                  {trackingData?.journey.map((step, index) => (
                     <div key={index} className="relative flex gap-4">
                       <div className="flex flex-col items-center">
                         <div
@@ -215,7 +220,7 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                         >
                           {step.completed ? <CheckCircle2 className="h-5 w-5" /> : <Clock className="h-5 w-5" />}
                         </div>
-                        {index < trackingData.journey.length - 1 && (
+                        {index < trackingData?.journey.length - 1 && (
                           <div className={`h-full w-0.5 ${step.completed ? "bg-green-200" : "bg-gray-200"}`} />
                         )}
                       </div>
