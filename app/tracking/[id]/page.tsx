@@ -105,7 +105,7 @@ export default function TrackingDetailPage({ params }: TrackingPageProps) {
                 <h1 className="text-2xl font-bold sm:text-3xl">Tracking Details</h1>
                 <p className="text-gray-200">Tracking Number: {trackingData?.trackingNumber}</p>
               </div>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild variant="outline" className="border-white text-primary hover:bg-primary/10">
                 <Link href="/tracking">Track Another Shipment</Link>
               </Button>
             </div>
