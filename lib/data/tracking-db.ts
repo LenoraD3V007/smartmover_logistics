@@ -123,6 +123,27 @@ export interface Package {
             status: "In transit to destination",
             completed: true,
           },         
+          {
+            date: "May 14, 2025",
+            time: "9:50 AM",
+            location: "Odessa, Ukraine",
+            status: "Received at the dispacthing office",
+            completed: true,
+          },         
+          {
+            date: "May 14, 2025",
+            time: "2:30 PM",
+            location: "Odessa, Ukraine",
+            status: "Registered for dispatching",
+            completed: true,
+          },         
+          {
+            date: "May 15, 2025",
+            time: "10:30 AM",
+            location: "Odessa, Ukraine",
+            status: "Awaiting clearance and dispacthing authority",
+            completed: false,
+          },         
         ],
       }    
   ];
