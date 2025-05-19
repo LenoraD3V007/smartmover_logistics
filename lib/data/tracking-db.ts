@@ -90,7 +90,7 @@ export interface Package {
         receiver: {
           name: "Mickael Sotchegbe",
           company: "...",
-          address: "1268 rue du centenaire Saint-Agapit, Québec, G0S 1Z0, Canada",
+          address: "1234 Rue Des Cedres, Appartement 5B, Québec(Quebec), G1K 7Z4, Canada",
           phone: "+1 (263) 382-7894",
           email: "...",
         },
